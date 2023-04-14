@@ -25,7 +25,7 @@ def generate_diet():
     activity = request.form["physical-activity"]
     print(height, weight, age, gender, activity)
 
-    if not height or not age or not weight:
+    if not height or not age or not weight or not gender or not activity:
         return (
             jsonify(
                 {"error": "Bad request", "message": "Please provide all the details"}

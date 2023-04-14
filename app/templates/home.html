@@ -7,6 +7,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- Static files -->
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
     <!-- Bootstrap CDN CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
@@ -14,6 +19,11 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <!-- Font Awesome CDB -->
+    <script
+      src="https://kit.fontawesome.com/5c1add1b68.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -45,7 +55,7 @@
 
     <!-- Form -->
     <div class="p-md-5 container-fluid">
-      <form method="post" action="/generate_diet">
+      <form method="post" action="/generate_diet" autocomplete="off">
         <div class="mb-3">
           <label for="height" class="form-label">Your height:</label>
           <input
@@ -105,68 +115,89 @@
         </div>
 
         <div class="physical-activity-container mt-2">
-          <label class="from-label me-4">Your physical activity level:</label>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              id="sedentary"
-              name="physical-activity"
-              type="radio"
-              value="sedentary"
-            />
-            <label class="form-check-label" for="sedentary"
-              >Sedentary (little or no exercise)</label
-            >
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              id="light-activity"
-              name="physical-activity"
-              type="radio"
-              value="light"
-            />
-            <label class="form-check-label" for="light-activity"
-              >Lightly active</label
-            >
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              id="moderate-activity"
-              name="physical-activity"
-              type="radio"
-              value="moderate"
-            />
-            <label class="form-check-label" for="moderate-activity"
-              >Moderately active</label
-            >
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              id="active"
-              name="physical-activity"
-              type="radio"
-              value="active"
-            />
-            <label class="form-check-label" for="active"
-              >Regularly active</label
-            >
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              id="very-active"
-              name="physical-activity"
-              type="radio"
-              value="very-active"
-            />
-            <label class="form-check-label" for="very=active"
-              >Very active</label
-            >
+          <p>Your physical activity level:</p>
+          <div class="ps-3 phyical-activity-radio-container">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                id="sedentary"
+                name="physical-activity"
+                type="radio"
+                value="sedentary"
+              />
+              <label class="form-check-label" for="sedentary"
+                >Sedentary (little or no exercise)</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                id="light-activity"
+                name="physical-activity"
+                type="radio"
+                value="light"
+              />
+              <label class="form-check-label" for="light-activity"
+                >Lightly active</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                id="moderate-activity"
+                name="physical-activity"
+                type="radio"
+                value="moderate"
+              />
+              <label class="form-check-label" for="moderate-activity"
+                >Moderately active</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                id="active"
+                name="physical-activity"
+                type="radio"
+                value="active"
+              />
+              <label class="form-check-label" for="active"
+                >Regularly active</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                id="very-active"
+                name="physical-activity"
+                type="radio"
+                value="very-active"
+              />
+              <label class="form-check-label" for="very=active"
+                >Very active</label
+              >
+            </div>
           </div>
         </div>
+
+        <div class="food-selector-container mt-3">
+          <p>What food items do you like:</p>
+          <div class="food-selector-row row">
+            <div class="col">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Search for item"
+              />
+            </div>
+            <div class="col">
+              <button class="btn" onclick="deleteItem()">
+                <i class="fa-solid fa-trash" style="color: #e01b24"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div class="mt-4 d-grid gap-2 col-6 mx-auto">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
