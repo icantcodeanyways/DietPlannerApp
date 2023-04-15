@@ -16,10 +16,10 @@ function addNextItem() {
       <input class="form-control" type="text" id="search-input" name="food-selection" onkeyup="searchFood(this.parentNode.parentNode, this.value)" placeholder="Search for item">
     </div>
     <div class="col">
-      <button class="btn" onclick="deleteItem()">
+      <button type="button" class="btn" onclick="deleteItem()">
         <i class="fa-solid fa-trash" style="color: #e01b24"></i>
       </button>
-      <button class="btn" onclick="addNextItem()">
+      <button type="button" class="btn" onclick="addNextItem()">
         <i class="fa-solid fa-check" style="color: #33d17a"></i>
       </button>
     </div>
