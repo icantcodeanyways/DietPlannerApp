@@ -1,6 +1,39 @@
 from flask import Flask, json, jsonify, redirect, render_template, request
+import requests
 
 app = Flask(__name__)
+
+# Edamam API constants
+NUTRIENTS_ENDPOINT = "https://api.edamam.com/api/food-database/v2/nutrients"
+APP_ID = "17ef13d8"
+APP_KEY = "1cd19810edca849183d418491db87c92"
+
+# Payload for POST to NUTRIENTS_ENDPOINT
+payload = {
+    "ingredients": [
+        {
+            "quantity": 1,
+            "measureURI": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+            "foodId": "",
+        }
+    ]
+}
+
+# Header for POST to NUTRIENTS_ENDPOINT
+headers = {"Content-Type": "application/json"}
+
+
+@app.route("/test", methods=["GET"])
+def test():
+    payload["ingredients"][0]["foodId"] = "something"
+    response = requests.post(
+        NUTRIENTS_ENDPOINT,
+        headers=headers,
+        params={"app_id": APP_ID, "app_key": APP_KEY},
+        json=payload,
+    ).json()
+    print(type(response))
+    return response
 
 
 # Route to check status of api
@@ -23,7 +56,26 @@ def generate_diet():
     age = int(request.form["age"])
     gender = request.form["gender"]
     activity = request.form["physical-activity"]
-    print(height, weight, age, gender, activity)
+    food_items = request.form.getlist("food-selection")
+    food_items_id = request.form.getlist("food_id")
+
+    food_list = []
+    for i in range(len(food_items)):
+        payload["ingredients"][0]["foodId"] = food_items_id[i]
+        response = requests.post(
+            NUTRIENTS_ENDPOINT,
+            headers=headers,
+            params={"app_id": APP_ID, "app_key": APP_KEY},
+            json=payload,
+        ).json()
+
+        food_dict = {"food_item": food_items[i], "food_item_id": food_items_id[i]}
+        food_dict["calories"] = response["calories"]
+        food_dict["fat"] = response["totalNutrients"]["FAT"]["quantity"]
+        food_dict["carbs"] = response["totalNutrients"]["CHOCDF"]["quantity"]
+        food_dict["protein"] = response["totalNutrients"]["PROCNT"]["quantity"]
+
+        food_list.append(food_dict)
 
     if not height or not age or not weight or not gender or not activity:
         return (
@@ -48,7 +100,8 @@ def generate_diet():
         amr = bmr * 1.725
     elif activity == "very-active":
         amr = bmr * 1.9
-    return jsonify({"amr": amr, "bmr": bmr})
+    
+    return jsonify(food_list)
 
 
 # Run the flask server
