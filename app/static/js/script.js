@@ -14,6 +14,7 @@ function addNextItem() {
   newRow.innerHTML = `
     <div class="col">
       <input class="form-control" type="text" id="search-input" name="food-selection" onkeyup="searchFood(this.parentNode.parentNode, this.value)" placeholder="Search for item">
+      <input type="hidden" name="food_id" id="food-id-input">
     </div>
     <div class="col">
       <button type="button" class="btn" onclick="deleteItem()">
@@ -47,15 +48,21 @@ async function searchFood(foodSelectorRow, searchTerm) {
   );
   const data = await response.json();
 
-  const foodItems = data.hints.map((hint) => hint.food.label);
+  const foodItems = data.hints.map((hint) => {
+    return {
+      label: hint.food.label,
+      id: hint.food.foodId,
+    };
+  });
 
   foodItems.forEach((foodItem) => {
     const listItem = document.createElement("li");
     listItem.classList.add("list-group-item");
     listItem.classList.add("col-6");
-    listItem.textContent = foodItem;
+    listItem.textContent = foodItem.label;
     listItem.addEventListener("click", () => {
-      foodSelectorRow.querySelector("#search-input").value = foodItem;
+      foodSelectorRow.querySelector("#search-input").value = foodItem.label;
+      foodSelectorRow.querySelector("#food-id-input").value = foodItem.id;
       searchResults.innerHTML = "";
     });
     searchResults.appendChild(listItem);
