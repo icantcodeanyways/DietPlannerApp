@@ -1,5 +1,7 @@
 from flask import Flask, json, jsonify, redirect, render_template, request
 import requests
+from pulp import *
+import random
 
 app = Flask(__name__)
 
@@ -53,6 +55,7 @@ def generate_diet():
             json=payload,
         ).json()
 
+        # Per gram values of calories, fat, carbs, protien etc.
         food_dict = {"food_item": food_items[i], "food_item_id": food_items_id[i]}
         food_dict["calories"] = response["calories"]
         food_dict["fat"] = response["totalNutrients"]["FAT"]["quantity"]
@@ -69,11 +72,13 @@ def generate_diet():
             400,
         )
 
+    bmr = 0
     if gender == "female":
         bmr = 655.1 + ((9.563 * weight) + (1.850 * height) - (4.676 * age))
     elif gender == "male":
         bmr = 66.47 + ((13.75 * weight) + (5.003 * height) - (6.755 * age))
 
+    amr = 0
     if activity == "sedentary":
         amr = bmr * 1.2
     elif activity == "light":
@@ -84,8 +89,35 @@ def generate_diet():
         amr = bmr * 1.725
     elif activity == "very-active":
         amr = bmr * 1.9
+
+    # Required calories per meal in a day 
+    required_calories = amr / 3
+    print(required_calories)
+
     
-    return jsonify(food_list)
+    total_nutrients = {"calories": 0, "fat": 0, "carbs": 0, "protein": 0}
+    
+    # Create a list to store the food items in the meal plan
+    meal_plan = []
+    
+    # Iterate through the food list and add items to the meal plan until the required calories per meal are met
+    for food in food_list:
+        # Check if adding the current food item will exceed the required calories per meal
+
+        quantity = random_value = random.randint(50, 200)
+        if total_nutrients["calories"] + food["calories"] * quantity <= required_calories:
+            # Add the current food item to the meal plan
+            meal_plan.append({"food_item": food["food_item"], "quantity": quantity})
+            
+            # Update the total nutrient information for the meal plan
+            total_nutrients["calories"] += food["calories"] * quantity
+        else:
+            # Stop adding food items once the required calories per meal are met
+            break
+    
+    # Return a json object with the meal plan and total nutrient information
+    return jsonify({"meal_plan": meal_plan, "total_nutrients": total_nutrients})
+  
 
 
 # Run the flask server
