@@ -22,31 +22,15 @@ payload = {
 # Header for POST to NUTRIENTS_ENDPOINT
 headers = {"Content-Type": "application/json"}
 
-
-@app.route("/test", methods=["GET"])
-def test():
-    payload["ingredients"][0]["foodId"] = "something"
-    response = requests.post(
-        NUTRIENTS_ENDPOINT,
-        headers=headers,
-        params={"app_id": APP_ID, "app_key": APP_KEY},
-        json=payload,
-    ).json()
-    print(type(response))
-    return response
-
-
 # Route to check status of api
 @app.route("/status", methods=["GET"])
 def status():
     return {"status": "ok"}
 
-
 # Route to index page
 @app.route("/", methods=["GET"])
 def home():
     return render_template("home.html")
-
 
 # Route for diet plan generation
 @app.route("/generate_diet", methods=["POST"])
