@@ -104,7 +104,7 @@ def generate_diet():
     for food in food_list:
         # Check if adding the current food item will exceed the required calories per meal
 
-        quantity = random_value = random.randint(50, 200)
+        quantity = random.randint(50, 200)
         if total_nutrients["calories"] + food["calories"] * quantity <= required_calories:
             # Add the current food item to the meal plan
             meal_plan.append({"food_item": food["food_item"], "quantity": quantity})
@@ -116,7 +116,9 @@ def generate_diet():
             break
     
     # Return a json object with the meal plan and total nutrient information
-    return jsonify({"meal_plan": meal_plan, "total_nutrients": total_nutrients})
+    """ return jsonify({"meal_plan": meal_plan, "total_nutrients": total_nutrients}) """
+    """ print(meal_plan) """
+    return render_template("diet.html", meal_plan=meal_plan)
   
 
 
