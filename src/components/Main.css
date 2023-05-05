@@ -1,0 +1,10 @@
+.MainConatiner{
+    background-image:  url("./images/bghome.jpg") ;
+    min-height: 100%;
+    min-width: 100%;
+    width:100%;
+    height: 120vh;
+    background-position:center;
+    background-size:cover; 
+    background-attachment:fixed;
+}
