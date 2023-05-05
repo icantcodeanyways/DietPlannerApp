@@ -1,34 +1,238 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import './Login.css'
-import {Link} from 'react-router-dom'
-
-
-
+import React from "react";
+import "./Signup.css";
+import { Link } from "react-router-dom";
+import NavbarSample from "./Navbar/Navbar";
+import samplePhoto from "./images/bg4.jpg";
 
 function Signup() {
   return (
-    <div className='LoginContainer'>
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-        </Form.Text>
-      </Form.Group>
+    <div className="Signup1Container">
+      <NavbarSample />
+      <section class="h-100 bg-dark">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card card-registration my-4">
+                <div class="row g-0">
+                  <div class="col-xl-6 d-none d-xl-block">
+                    <img
+                      src={samplePhoto}
+                      class="img-fluid h-100"
+                      alt=""
+                      style={{
+                        borderTopLeftRadius: ".25rem",
+                        borderBottomLeftRadius: ".25rem",
+                      }}
+                    />
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card-body p-md-5 text-black">
+                      <h3 class="mb-5 text-uppercase">Registration Details</h3>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Link to='/Signup1' ><Button variant="primary" >Next</Button></Link>
-    </Form>
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="form3Example1m"
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="form3Example1m">
+                              First name
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="form3Example1n"
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="form3Example1n">
+                              Last name
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="form3Example1m1"
+                              class="form-control form-control-lg"
+                              placeholder="Enter your Email "
+                            />
+                            <label class="form-label" for="form3Example1m1">
+                              Email
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="form3Example1n1"
+                              class="form-control form-control-lg"
+                              placeholder="Create new password"
+                            />
+                            <label class="form-label" for="form3Example1n1">
+                              Password
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input
+                          type="text"
+                          id="form3Example8"
+                          class="form-control form-control-lg"
+                        />
+                        <label class="form-label" for="form3Example8">
+                          Address
+                        </label>
+                      </div>
+
+                      <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                        <h6 class="mb-0 me-4">Gender: </h6>
+
+                        <div class="form-check form-check-inline mb-0 me-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="femaleGender"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="femaleGender">
+                            Female
+                          </label>
+                        </div>
+
+                        <div class="form-check form-check-inline mb-0 me-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="maleGender"
+                            value="option2"
+                          />
+                          <label class="form-check-label" for="maleGender">
+                            Male
+                          </label>
+                        </div>
+
+                        <div class="form-check form-check-inline mb-0">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="otherGender"
+                            value="option3"
+                          />
+                          <label class="form-check-label" for="otherGender">
+                            Other
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <select className="select">
+                            <option value="1">Activity Factor</option>
+                            <option value="2">1</option>
+                            <option value="3">1.2</option>
+                            <option value="4">1.4</option>
+                            <option value="3">1.6</option>
+                            <option value="3">1.8</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <select className="select">
+                            <option value="1">Food Type</option>
+                            <option value="2">Vegetarain</option>
+                            <option value="3">Non-vegetarian</option>
+                            <option value="4">Vegan</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input
+                          type="text"
+                          id="form3Example9"
+                          class="form-control form-control-lg"
+                        />
+                        <label class="form-label" for="form3Example9">
+                          DOB
+                        </label>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="form3Example1m"
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="form3Example1m">
+                              Height(cm)
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="form3Example1n"
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="form3Example1n">
+                              Weight(kg)
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input
+                          type="text"
+                          id="form3Example99"
+                          class="form-control form-control-lg"
+                          placeholder="Do you have any food allergies"
+                        />
+                        <label class="form-label" for="form3Example99">
+                          Food Allergies
+                        </label>
+                      </div>
+
+                      <div class="d-flex justify-content-end pt-3">
+                        <button type="button" class="btn btn-light btn-lg">
+                          Reset all
+                        </button>
+                        {/* <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button> */}
+                        <Link to="/Main">
+                          <button
+                            type="button"
+                            class="btn btn-warning btn-lg ms-2"
+                          >
+                            Submit form
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;

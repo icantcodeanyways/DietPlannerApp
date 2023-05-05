@@ -1,6 +1,8 @@
-.SignupContainer{
-    border:2px solid black;
-    border-radius: 5px;
-    width:400px;
-    margin:auto;
-}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+
+    
