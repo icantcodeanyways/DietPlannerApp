@@ -3,6 +3,7 @@ import Home from "./components/Home.jsx";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
+import Settings from "./components/Settings"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Signup} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/settings" component={Settings} />
         </Switch>
       </Router>
     </div>

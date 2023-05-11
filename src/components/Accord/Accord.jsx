@@ -7,7 +7,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 function Accord() {
     return (
         <>
-            <div className='AccordBox'>
+            <div className='AccordBox container'>
                 <Accordion>
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Breakfast </Accordion.Header>
