@@ -31,9 +31,9 @@ function App() {
         `${process.env.REACT_APP_API_ENDPOINT}/api/users/login`,
         { email, password }
       );
-      if ((response.status = 200)) {
+      if (response.status === 200) {
         localStorage.setItem("Token", response.data.token);
-        history.push("/dashboard")
+        history.push("/dashboard");
       }
       console.log(response);
     } catch (error) {
