@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css";
-import { Link } from "react-router-dom";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+// import { Link } from "react-router-dom";
+// import { Dropdown, DropdownButton } from "react-bootstrap";
 import NavbarSample from "./Navbar/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import samplePhoto from "./images/bg4.jpg";
@@ -28,7 +28,7 @@ function Register() {
 
   async function handleRegister(e) {
     e.preventDefault();
-    if (formData.password != formData.confirmPassword) {
+    if (formData.password !== formData.confirmPassword) {
       toast.error("Passwords do not match");
       return;
     }
@@ -49,7 +49,7 @@ function Register() {
         payload
       );
 
-      if (response.status == 201) {
+      if (response.status === 201) {
         console.log("success");
       }
     } catch (error) {

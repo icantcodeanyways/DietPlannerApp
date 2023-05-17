@@ -1,0 +1,69 @@
+
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .pop-up-container {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .pop-up-container h3 {
+    margin-bottom: 20px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .diet-card {
+    height:10px;
+    width: 150px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .selected {
+    background-color: #eef0ff;
+  }
+  
+  .card-content {
+    
+height:60px;
+  }
+  
+  .card-footer {
+    height:60px;
+}
+  
+  /* .recommend-button {
+}
+ 
+  .log-food-container,
+  .custom-meal-container {
+    
+  } */
+  

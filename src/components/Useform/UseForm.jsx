@@ -34,14 +34,34 @@ function UserForm() {
         />
       </label>
       <br />
-      <label>
+      {/* <select>
         Activity Factor:
-        <input
-          type="text"
+        <option
+          type="select"
           value={activityFactor}
-          onChange={event => setActivityFactor(event.target.value)}
+          onChange={event => setActivityFactor(event.target.value)
+            // <option value="1">Activity Factor</option>
+            <option value="1">1</option>
+            <option value="1.2">1.2</option>
+            <option value="1.4">1.4</option>
+            <option value="1.6">1.6</option>
+            <option value="1.8">1.8</option>}
+          
         />
+      </select> */}
+      <label>Activity Factor
+      <select class="form-select">
+      value={activityFactor}
+          onChange={event => setActivityFactor(event.target.value)}
+  <option>1</option>
+  <option>1.2</option>
+  <option>1.4</option>
+  <option>1.6</option>
+  <option>1.8</option>
+  <option>1.2</option>
+</select>
       </label>
+      
       <br />
       <label>
         Food Preferences:

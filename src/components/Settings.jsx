@@ -8,6 +8,8 @@ function Settings() {
 
       <NavbarSample1 />
       <div className='container1'>
+            <div>
+            </div>
       <UserForm/> 
       </div>
      

@@ -6,11 +6,12 @@ import './Navbar.css'
 
 function NavbarSample1() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="warning" variant="dark">
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          
+        <h2 style={{ color: "white" }} >User Name</h2>
+
           <Nav className='mx-auto' >
           {/* <Nav.Link href="/"  style={{ color: "white" }}>Home</Nav.Link> */}
             <Nav.Link href="#"  style={{ color: "white" }}>Personal Info</Nav.Link>

@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
 import Settings from "./components/Settings"
+import Diet from './components/Diet'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -17,6 +18,8 @@ function App() {
           <Route exact path="/register" component={Signup} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/settings" component={Settings} />
+          <Route exact path="/diet" component={Diet} />
+
         </Switch>
       </Router>
     </div>
