@@ -1,5 +1,5 @@
 import React from 'react'
-import NavbarSample from "./Navbar/Navbar";
+import NavbarSample from "../Navbar/Navbar";
 import './Diet.css'
 import DietBox from './DietBox';
 

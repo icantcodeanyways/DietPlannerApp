@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Signup.css";
 // import { Link } from "react-router-dom";
 // import { Dropdown, DropdownButton } from "react-bootstrap";
-import NavbarSample from "./Navbar/Navbar";
+import NavbarSample from "../Navbar/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import samplePhoto from "./images/bg4.jpg";
 import axios from "axios";

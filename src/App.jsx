@@ -1,10 +1,10 @@
 import "./App.css";
-import Home from "./components/Home.jsx";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import Dashboard from "./components/Dashboard";
-import Settings from "./components/Settings"
-import Diet from './components/Diet'
+import Home from "./components/Home/Home.jsx";
+import Login from "./components/Login/Login";
+import Signup from "./components/SignUp/Signup";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Settings from "./components/SettingsPage/Settings"
+import Diet from './components/DietPage/Diet'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
