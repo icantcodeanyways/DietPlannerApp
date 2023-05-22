@@ -257,7 +257,7 @@ function Register() {
                               required
                               onChange={handleFormChange}
                             >
-                              <option value="1">Diet Goal</option>
+                              <option value="maintain">Diet Goal</option>
                               <option value="gain">Gain weight</option>
                               <option value="maintain">Maintain weight</option>
                               <option value="lose">Lose weight</option>
