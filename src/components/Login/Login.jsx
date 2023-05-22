@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../context/AuthContext";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 import "./Login.css";
 
@@ -104,9 +105,9 @@ function App() {
                 </a>
                 <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
                   Don't have an account?{" "}
-                  <a href="#!" style={{ color: "#393f81" }}>
+                  <Link to="/register" style={{ color: "#393f81" }}>
                     Register here
-                  </a>
+                  </Link>
                 </p>
               </MDBCardBody>
             </MDBCol>
