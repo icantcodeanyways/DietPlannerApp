@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import './DietBox.css';
-import { Button, Container, Card, Form } from 'react-bootstrap';
+import React, { useState } from "react";
+import "./DietBox.css";
+import { Button, Container, Card, Form } from "react-bootstrap";
 
 function DietBox() {
   const [showRecommend, setShowRecommend] = useState(false);
@@ -49,7 +49,10 @@ function DietBox() {
       const isSelected = selectedCards.includes(cardId);
 
       currentRow.push(
-        <Card key={cardId} className={`diet-card ${isSelected ? 'selected' : ''}`}>
+        <Card
+          key={cardId}
+          className={`diet-card ${isSelected ? "selected" : ""}`}
+        >
           <Card.Body>
             <div className="card-content">
               <Form.Check
@@ -85,13 +88,25 @@ function DietBox() {
   return (
     <div className="DietBox col-lg-10 col-sm container-fluid">
       <div className="button-container">
-        <Button variant="outline-primary" style={{ marginRight: '10px' }} onClick={handleRecommendClick}>
+        <Button
+          variant="outline-primary"
+          style={{ marginRight: "10px" }}
+          onClick={handleRecommendClick}
+        >
           Recommend
         </Button>
-        <Button variant="outline-success" style={{ marginRight: '10px' }} onClick={handleLogFoodClick}>
+        <Button
+          variant="outline-success"
+          style={{ marginRight: "10px" }}
+          onClick={handleLogFoodClick}
+        >
           Log Food
         </Button>
-        <Button variant="outline-success" style={{ marginRight: '10px' }} onClick={handleCustomMealClick}>
+        <Button
+          variant="outline-success"
+          style={{ marginRight: "10px" }}
+          onClick={handleCustomMealClick}
+        >
           Custom Meal
         </Button>
       </div>
@@ -122,7 +137,10 @@ function DietBox() {
           <h3>Custom Meal</h3>
           <Form>
             <Form.Group>
-              <Form.Control type="text" placeholder="Search for ingredients..." />
+              <Form.Control
+                type="text"
+                placeholder="Search for ingredients..."
+              />
             </Form.Group>
             <Button variant="outline-primary" onClick={handleSearch}>
               Search
