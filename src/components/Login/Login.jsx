@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavbarSample from "../Navbar/Navbar";
-import samplePhoto from "./images/bg4.jpg";
+import samplePhoto from "../images/bg4.jpg";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
