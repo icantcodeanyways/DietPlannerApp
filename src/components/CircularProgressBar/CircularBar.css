@@ -1,17 +1,16 @@
-.Box1{
-    padding:10px;
-    width:60%;
-    background-color: white;
-    margin:auto;
-    /* margin-top:20px; */
-    border: 5px solid orange;
-    border-radius: 20px;
-
+.Box1 {
+  padding: 10px;
+  width: 60%;
+  background-color: white;
+  margin: auto;
+  /* margin-top:20px; */
+  border: 5px solid orange;
+  border-radius: 20px;
 }
-.Box2{
-    margin:auto;
-    margin-top:20px;
+.Box2 {
+  margin: auto;
+  margin-top: 20px;
 }
-.CircularBox{
-    margin:auto;
+.CircularBox {
+  margin: auto;
 }
