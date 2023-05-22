@@ -18,6 +18,7 @@ function Register() {
     dob: "",
     height: "",
     weight: "",
+    dietGoal: "",
   });
 
   function handleFormChange(event) {
@@ -42,6 +43,7 @@ function Register() {
         dob: new Date(formData.dob).toLocaleDateString("en-GB"),
         height: parseFloat(formData.height),
         weight: parseFloat(formData.weight),
+        diet_goal: formData.dietGoal,
       };
       const response = await axios.post(
         `${process.env.REACT_APP_API_ENDPOINT}/api/users/register`,
@@ -242,6 +244,23 @@ function Register() {
                               <option value="1.4">1.4</option>
                               <option value="1.6">1.6</option>
                               <option value="1.8">1.8</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 mb-4">
+                            <select
+                              name="dietGoal"
+                              value={formData.dietGoal}
+                              className="select"
+                              required
+                              onChange={handleFormChange}
+                            >
+                              <option value="1">Diet Goal</option>
+                              <option value="gain">Gain weight</option>
+                              <option value="maintain">Maintain weight</option>
+                              <option value="lose">Lose weight</option>
                             </select>
                           </div>
                         </div>
