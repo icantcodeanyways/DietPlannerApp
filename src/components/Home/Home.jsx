@@ -1,13 +1,11 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import NavbarSample from "../Navbar/Navbar";
 import "./Home.css";
 
 function Home() {
   return (
     <div>
-      <NavbarSample />
       <div className="Conatiner1">
         <div
           className="Box col-xs-6"

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Signup.css";
 // import { Link } from "react-router-dom";
 // import { Dropdown, DropdownButton } from "react-bootstrap";
-import NavbarSample from "../Navbar/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import samplePhoto from "../images/bg4.jpg";
 import axios from "axios";
@@ -60,7 +59,6 @@ function Register() {
   return (
     <div className="Signup1Container">
       <ToastContainer />
-      <NavbarSample />
       <section className="h-100 bg-dark">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
