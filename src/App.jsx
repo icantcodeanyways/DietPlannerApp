@@ -9,6 +9,7 @@ import { AuthProvider } from "./context/AuthContext";
 import NavbarSample from "./components/Navbar/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Signup} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/settings" component={Settings} />
-            <Route exact path="/diet" component={Diet} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/settings" component={Settings} />
+            <PrivateRoute exact path="/diet" component={Diet} />
           </Switch>
         </Router>
       </AuthProvider>
