@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import NavbarSample from "../Navbar/Navbar";
 import samplePhoto from "../images/bg4.jpg";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../../context/AuthContext";
 import Button from "react-bootstrap/Button";
 
 import "./Login.css";
@@ -22,6 +23,8 @@ import {
 function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useContext(AuthContext);
+
   const history = useHistory();
 
   async function handleSubmit(e) {
@@ -33,9 +36,9 @@ function App() {
       );
       if (response.status === 200) {
         localStorage.setItem("Token", response.data.token);
+        setIsAuthenticated(true);
         history.push("/dashboard");
       }
-      console.log(response);
     } catch (error) {
       toast.error(error.response.data.message);
       setEmail("");
