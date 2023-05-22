@@ -3,20 +3,38 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "./CircularBar.css";
-function CircularBar() {
+function CircularBar(props) {
+  const caloriePercentage =
+    (props.userDetails.consumedCalories / props.userDetails.requiredCalories) *
+    100;
+  const fatPercentage =
+    (props.userDetails.consumedFat / props.userDetails.requiredFat) * 100;
+  const protienPercentage =
+    (props.userDetails.consumedProtien / props.userDetails.requiredProtien) *
+    100;
+  const carbPercentage =
+    (props.userDetails.consumedCarbs / props.userDetails.requiredCarbs) * 100;
+
   return (
     <>
       <div className="Box1">
-        <h4>Calories:000/000</h4>
+        <h4>
+          Calories : {props.userDetails.consumedCalories} /{" "}
+          {Math.round(props.userDetails.requiredCalories)}
+        </h4>
         <div className="Box2">
           <div className="CircularBox" style={{ width: 150, height: 150 }}>
-            <CircularProgressbar value={50} text={"50%"} />
+            <CircularProgressbar
+              value={caloriePercentage}
+              text={caloriePercentage.toString()}
+            />
           </div>
         </div>
         <div>
-          Carbohydrates <ProgressBar animated now={80} />
-          Protein <ProgressBar variant="warning" animated now={45} />
-          Fat <ProgressBar variant="danger" animated now={70} />
+          Carbohydrates <ProgressBar animated now={carbPercentage} />
+          Protein{" "}
+          <ProgressBar variant="warning" animated now={protienPercentage} />
+          Fat <ProgressBar variant="danger" animated now={fatPercentage} />
         </div>
       </div>
     </>
