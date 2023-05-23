@@ -56,10 +56,24 @@
   height: 60px;
 }
 
-/* .recommend-button {
+.loading-text {
+  font-size: 3rem;
+  color: white;
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
- 
-  .log-food-container,
-  .custom-meal-container {
-    
-  } */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+  z-index: 9999;
+}
