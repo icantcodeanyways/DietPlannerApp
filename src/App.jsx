@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
 import { ToastContainer } from "react-toastify";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Signup} />
+            <Route exact path="/forgot_password" component={ForgotPassword} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/settings" component={Settings} />
             <PrivateRoute exact path="/diet" component={Diet} />
