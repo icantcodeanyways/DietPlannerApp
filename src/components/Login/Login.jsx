@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import samplePhoto from "../images/bg4.jpg";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../context/AuthContext";
 import Button from "react-bootstrap/Button";
@@ -48,7 +48,6 @@ function App() {
 
   return (
     <>
-      <ToastContainer />
       <MDBContainer className="my-5">
         <MDBCard>
           <MDBRow className="g-0">

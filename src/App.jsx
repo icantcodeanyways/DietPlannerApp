@@ -10,6 +10,8 @@ import NavbarSample from "./components/Navbar/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
             <PrivateRoute exact path="/settings" component={Settings} />
             <PrivateRoute exact path="/diet" component={Diet} />
           </Switch>
+          <ToastContainer />
         </Router>
       </AuthProvider>
     </div>

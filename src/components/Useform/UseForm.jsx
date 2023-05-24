@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import "./Useform.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 function UserForm() {
   const [height, setHeight] = useState("");
@@ -69,7 +69,6 @@ function UserForm() {
 
   return (
     <>
-      <ToastContainer position="top-right" />
       <div className="containerBox">
         <form onSubmit={handleSubmit}>
           <label>
