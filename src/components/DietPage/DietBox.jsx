@@ -109,10 +109,9 @@ function DietBox() {
       const token = localStorage.getItem("Token");
       const userId = jwt_decode(token).user_id;
       setLoading({ status: true, message: "Saving diet plan.." });
-      generatedDiets.push({ diet_timing: mealTiming });
       const response = await axios.post(
         `${process.env.REACT_APP_API_ENDPOINT}/api/users/${userId}/diet_plans`,
-        { diet_plan: generatedDiets },
+        { diet_plan: generatedDiets, diet_timing: mealTiming },
         {
           headers: {
             Authorization: token,
