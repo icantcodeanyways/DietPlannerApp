@@ -20,7 +20,7 @@ function CircularBar(props) {
       <div className="Box1">
         <h4>
           Calories : {props.userDetails.consumedCalories.toFixed(3)} /{" "}
-          {Math.round(props.userDetails.requiredCalories.toFixed(3))}
+          {Math.round(props.userDetails.requiredCalories)}
         </h4>
         <div className="Box2">
           <div className="CircularBox" style={{ width: 150, height: 150 }}>
