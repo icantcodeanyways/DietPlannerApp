@@ -99,9 +99,9 @@ function App() {
                     </Button>
                   </div>
                 </form>
-                <a className="small text-muted" href="#!">
-                  Forgot password?
-                </a>
+                <Link to="/forgot_password">
+                  <a className="small text-muted">Forgot password?</a>
+                </Link>
                 <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
                   Don't have an account?{" "}
                   <Link to="/register" style={{ color: "#393f81" }}>
