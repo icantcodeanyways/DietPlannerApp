@@ -14,7 +14,7 @@ import { Typeahead } from "react-bootstrap-typeahead";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import FoodItemCard from "./FoodItemCard";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 function DietBox() {
   const [showRecommend, setShowRecommend] = useState(false);
@@ -91,12 +91,18 @@ function DietBox() {
       );
       setLoading({ status: false, message: "" });
       setIsDietGenerated(true);
+      setShowRecommend([]);
       setGeneratedDiets(response.data);
     } catch (error) {
       setLoading({ status: false, message: "" });
       setGeneratedDiets([]);
+      setShowRecommend([]);
       setIsDietGenerated(false);
-      console.log(error);
+      if (error.response.status == 400) {
+        toast.error(
+          "Cannot generate diet plan with the given data. Please choose some other meals"
+        );
+      }
     }
   };
 
@@ -121,11 +127,19 @@ function DietBox() {
       console.log(response);
       setLoading({ status: false, message: "" });
       setGeneratedDiets([]);
+      setMeals([]);
       setIsDietGenerated(false);
+      toast.success("Diet plan saved successully.");
     } catch (error) {
       setLoading({ status: false, message: "" });
+      setMeals([]);
       setGeneratedDiets([]);
       setIsDietGenerated(false);
+      if (error.response.status == 409) {
+        toast.error("Diet plan already exist for the given meal time.");
+      } else {
+        toast.error("An error occured");
+      }
       console.log(error);
     }
   };
@@ -155,7 +169,6 @@ function DietBox() {
         </div>
       )}
       <div className="DietBox col-lg-10 col-sm container-fluid">
-        <ToastContainer />
         <div className="button-container">
           <Button
             variant="outline-primary"
