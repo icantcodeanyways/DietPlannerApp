@@ -52,8 +52,47 @@ function Register() {
 
       if (response.status === 201) {
         console.log("success");
+        toast.success("Account created successfully. Please login");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+          gender: "",
+          activityFactor: "",
+          dob: "",
+          height: "",
+          weight: "",
+          dietGoal: "",
+        });
       }
     } catch (error) {
+      if (error.response.status === 409) {
+        toast.error(
+          "A user already exist with that email address. Please login or use a different email address"
+        );
+      } else if (error.response.status === 400) {
+        toast.error(
+          "Invalid user details. Please check the data you have entered and try again"
+        );
+      } else {
+        toast.error("An orror occured");
+      }
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        gender: "",
+        activityFactor: "",
+        dob: "",
+        height: "",
+        weight: "",
+        dietGoal: "",
+      });
+
       console.log(error.response.data);
     }
   }
