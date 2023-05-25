@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 function FoodItemCard({ diet }) {
   console.log(diet);
   return (
-    <div className="col-md-4 p-3">
+    <div className="p-3">
       <Card>
         <Card.Img variant="top" src={diet.image} />
         <Card.Body>
