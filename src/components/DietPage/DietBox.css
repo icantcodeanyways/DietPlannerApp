@@ -74,6 +74,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 9999;
 }
