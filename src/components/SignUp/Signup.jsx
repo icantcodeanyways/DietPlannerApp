@@ -5,6 +5,7 @@ import "./Signup.css";
 import { toast } from "react-toastify";
 import samplePhoto from "../images/bg4.jpg";
 import axios from "axios";
+import Loading from "../Loading/Loading";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -21,6 +22,8 @@ function Register() {
     dietGoal: "",
   });
 
+  const [loading, setLoading] = useState({ status: false, message: "" });
+
   function handleFormChange(event) {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -32,6 +35,8 @@ function Register() {
       toast.error("Passwords do not match");
       return;
     }
+
+    setLoading({ status: true, message: "Creating account..." });
     try {
       const payload = {
         first_name: formData.firstName,
@@ -67,6 +72,7 @@ function Register() {
           dietGoal: "",
         });
       }
+      setLoading({ status: false, message: "" });
     } catch (error) {
       if (error.response.status === 409) {
         toast.error(
@@ -92,6 +98,7 @@ function Register() {
         weight: "",
         dietGoal: "",
       });
+      setLoading({ status: false, message: "" });
 
       console.log(error.response.data);
     }
@@ -99,6 +106,7 @@ function Register() {
 
   return (
     <div className="Signup1Container">
+      {loading.status && <Loading message={loading.message} />}
       <section className="h-100 bg-dark">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
