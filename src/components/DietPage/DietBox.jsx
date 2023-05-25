@@ -315,7 +315,7 @@ function DietBox() {
               </div>
             )}
             {isDietGenerated && (
-              <CardGroup>
+              <CardGroup className="justify-content-center">
                 {generatedDiets.map((diet, index) => (
                   <FoodItemCard index={index} diet={diet} />
                 ))}
