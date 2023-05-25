@@ -222,7 +222,7 @@ function DietBox() {
       setLoading({ status: true, message: "Saving diet plan.." });
       const response = await axios.post(
         `${process.env.REACT_APP_API_ENDPOINT}/api/users/${userId}/diet_plans`,
-        { diet_plan: generatedDiets, diet_timing: mealTiming },
+        { diet_plan: generatedDiets, meal_timing: mealTiming },
         {
           headers: {
             Authorization: token,
