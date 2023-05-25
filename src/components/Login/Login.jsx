@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../context/AuthContext";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import Loading from "../Loading/Loading";
 
 import "./Login.css";
 
@@ -24,12 +25,14 @@ function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useContext(AuthContext);
+  const [loading, setLoading] = useState({ status: false, message: "" });
 
   const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
+      setLoading({ status: true, message: "Signing in..." });
       const response = await axios.post(
         `${process.env.REACT_APP_API_ENDPOINT}/api/users/login`,
         { email, password }
@@ -39,15 +42,18 @@ function App() {
         setIsAuthenticated(true);
         history.push("/dashboard");
       }
+      setLoading({ status: false, message: "" });
     } catch (error) {
       toast.error(error.response.data.message);
       setEmail("");
       setPassword("");
+      setLoading({ status: false, message: "" });
     }
   }
 
   return (
     <>
+      {loading.status && <Loading message={loading.message} />}
       <MDBContainer className="my-5">
         <MDBCard>
           <MDBRow className="g-0">
