@@ -39,6 +39,11 @@ function NavbarSample() {
                   Generate diet plan
                 </Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/view_diet_plan">
+                <Nav.Link style={{ color: "white" }}>
+                  View generated diet plans
+                </Nav.Link>
+              </LinkContainer>
               <Nav.Link onClick={handleLogOut} style={{ color: "white" }}>
                 Logout
               </Nav.Link>
