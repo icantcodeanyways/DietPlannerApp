@@ -4,9 +4,9 @@ import "./Accord.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 function Accord(props) {
-  const breakFastStats = props.userDetails.breakFastStats;
-  const dinnerStats = props.userDetails.dinnerStats;
-  const lunchStats = props.userDetails.lunchStats;
+  const breakFastStats = props.userDetails.breakFastStats | 0;
+  const dinnerStats = props.userDetails.dinnerStats | 0;
+  const lunchStats = props.userDetails.lunchStats | 0;
 
   const breakFastPercentStats = {
     carbsPercent:
