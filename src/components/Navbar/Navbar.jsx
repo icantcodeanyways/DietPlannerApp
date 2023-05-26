@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { LinkContainer } from "react-router-bootstrap";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { toast } from "react-toastify";
 import "./Navbar.css";
 
 function NavbarSample() {
@@ -15,6 +16,7 @@ function NavbarSample() {
     e.preventDefault();
     setIsAuthenticated(false);
     localStorage.removeItem("Token");
+    toast.success("You have been logged out successfully..");
     history.push("/");
   }
 
