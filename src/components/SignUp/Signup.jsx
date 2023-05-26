@@ -354,12 +354,6 @@ function Register() {
                         </div>
                         <div className="d-flex justify-content-center pt-3">
                           <button
-                            type="button"
-                            className="btn btn-light btn-lg"
-                          >
-                            Reset all
-                          </button>
-                          <button
                             type="submit"
                             className="btn btn-warning btn-lg ms-2"
                           >
