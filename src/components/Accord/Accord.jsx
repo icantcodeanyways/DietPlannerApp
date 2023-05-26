@@ -2,11 +2,14 @@ import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import "./Accord.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import { useHistory } from "react-router-dom";
 
 function Accord(props) {
   const breakFastStats = props.userDetails.breakFastStats | 0;
   const dinnerStats = props.userDetails.dinnerStats | 0;
   const lunchStats = props.userDetails.lunchStats | 0;
+
+  const history = useHistory();
 
   const breakFastPercentStats = {
     carbsPercent:
@@ -68,14 +71,22 @@ function Accord(props) {
                 />
               </div>
               <br />
-              <div class=" buttons">
-                <button class="button">
-                  <span></span>Recommend
-                </button>
-                <button class="button button3 ">
-                  <span></span>Track
-                </button>
-              </div>
+              <button
+                class="button"
+                onClick={() => {
+                  history.push("/diet");
+                }}
+              >
+                Recommend
+              </button>
+              <button
+                class="button button3 "
+                onClick={() => {
+                  history.push("/diet");
+                }}
+              >
+                Track
+              </button>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
@@ -96,14 +107,22 @@ function Accord(props) {
                 now={lunchPercentStats.fatPercent}
               />
               <br />
-              <div class=" buttons">
-                <button class="button">
-                  <span></span>Recommend
-                </button>
-                <button class="button button3 ">
-                  <span></span>Track
-                </button>
-              </div>
+              <button
+                class="button"
+                onClick={() => {
+                  history.push("/diet");
+                }}
+              >
+                Recommend
+              </button>
+              <button
+                class="button button3 "
+                onClick={() => {
+                  history.push("/diet");
+                }}
+              >
+                Track
+              </button>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2">
@@ -125,11 +144,21 @@ function Accord(props) {
               />
               <br />
               <div class=" buttons">
-                <button class="button">
-                  <span></span>Recommend
+                <button
+                  class="button"
+                  onClick={() => {
+                    history.push("/diet");
+                  }}
+                >
+                  Recommend
                 </button>
-                <button class="button button3 ">
-                  <span></span>Track
+                <button
+                  class="button button3 "
+                  onClick={() => {
+                    history.push("/diet");
+                  }}
+                >
+                  Track
                 </button>
               </div>
             </Accordion.Body>
