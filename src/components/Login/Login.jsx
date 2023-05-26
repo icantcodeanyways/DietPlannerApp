@@ -40,6 +40,7 @@ function App() {
       if (response.status === 200) {
         localStorage.setItem("Token", response.data.token);
         setIsAuthenticated(true);
+        toast.success("You have successfully logged in..");
         history.push("/dashboard");
       }
       setLoading({ status: false, message: "" });
