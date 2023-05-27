@@ -72,7 +72,7 @@ function ViewDietPlan() {
         {!hasSearched && (
           <Container>
             <Row>
-              <h2>See your diets</h2>
+              <h3>Generated diet plans</h3>
             </Row>
             <Row className="justify-content-center mt-3">
               <Col md="5">
