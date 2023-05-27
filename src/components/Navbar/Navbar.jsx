@@ -30,21 +30,17 @@ function NavbarSample() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <LinkContainer to="/dashboard">
-                <Nav.Link style={{ color: "white" }}>Dashboard</Nav.Link>
+              <LinkContainer exact to="/dashboard">
+                <Nav.Link>Dashboard</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/settings">
-                <Nav.Link style={{ color: "white" }}>Update user info</Nav.Link>
+              <LinkContainer exact to="/settings">
+                <Nav.Link>Update user info</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/diet">
-                <Nav.Link style={{ color: "white" }}>
-                  Generate diet plan
-                </Nav.Link>
+              <LinkContainer exact to="/diet">
+                <Nav.Link>Generate diet plan</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/view_diet_plan">
-                <Nav.Link style={{ color: "white" }}>
-                  View generated diet plans
-                </Nav.Link>
+              <LinkContainer exact to="/view_diet_plan">
+                <Nav.Link>View generated diet plans</Nav.Link>
               </LinkContainer>
               <Nav.Link onClick={handleLogOut} style={{ color: "white" }}>
                 Logout
@@ -60,14 +56,14 @@ function NavbarSample() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <LinkContainer to="/">
-                <Nav.Link style={{ color: "white" }}>Home</Nav.Link>
+              <LinkContainer exact to="/">
+                <Nav.Link>Home</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/login">
-                <Nav.Link style={{ color: "white" }}>Login</Nav.Link>
+              <LinkContainer exact to="/login">
+                <Nav.Link>Login</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/register">
-                <Nav.Link style={{ color: "white" }}>Register</Nav.Link>
+              <LinkContainer exact to="/register">
+                <Nav.Link>Register</Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>
