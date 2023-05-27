@@ -5,24 +5,28 @@ import "react-circular-progressbar/dist/styles.css";
 import "./CircularBar.css";
 function CircularBar(props) {
   const caloriePercentage =
-    (props.userDetails.consumedCalories / props.userDetails.requiredCalories) *
-    100;
+    ((props.userDetails.consumedCalories / props.userDetails.requiredCalories) *
+      100) |
+    0;
   const fatPercentage =
-    (props.userDetails.consumedFat / props.userDetails.requiredFat) * 100;
+    ((props.userDetails.consumedFat / props.userDetails.requiredFat) * 100) | 0;
   const protienPercentage =
-    (props.userDetails.consumedProtien / props.userDetails.requiredProtien) *
-    100;
+    ((props.userDetails.consumedProtien / props.userDetails.requiredProtien) *
+      100) |
+    0;
   const carbPercentage =
-    (props.userDetails.consumedCarbs / props.userDetails.requiredCarbs) * 100;
+    ((props.userDetails.consumedCarbs / props.userDetails.requiredCarbs) *
+      100) |
+    0;
 
   return (
     <>
       <div className="Box1">
-        <h4>
+        <h4 className="mt-3">
           Calories : {props.userDetails.consumedCalories.toFixed(3)} /{" "}
           {Math.round(props.userDetails.requiredCalories)}
         </h4>
-        <div className="Box2">
+        <div className="Box2 mb-3">
           <div className="CircularBox" style={{ width: 150, height: 150 }}>
             <CircularProgressbar
               value={caloriePercentage}
@@ -31,10 +35,22 @@ function CircularBar(props) {
           </div>
         </div>
         <div>
-          Carbohydrates <ProgressBar animated now={carbPercentage} />
+          Carbohydrates{" "}
+          <ProgressBar className="mb-3 mx-3" animated now={carbPercentage} />
           Protein{" "}
-          <ProgressBar variant="warning" animated now={protienPercentage} />
-          Fat <ProgressBar variant="danger" animated now={fatPercentage} />
+          <ProgressBar
+            className="mb-3 mx-3"
+            variant="warning"
+            animated
+            now={protienPercentage}
+          />
+          Fat{" "}
+          <ProgressBar
+            className="mb-3  mx-3"
+            variant="danger"
+            animated
+            now={fatPercentage}
+          />
         </div>
       </div>
     </>
