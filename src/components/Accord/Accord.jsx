@@ -54,17 +54,20 @@ function Accord(props) {
               <div className="BreakDiv">
                 Carbohydrates{" "}
                 <ProgressBar
+                  className="mb-3 mx-3"
                   animated
                   now={breakFastPercentStats.carbsPercent}
                 />
                 Protein{" "}
                 <ProgressBar
+                  className="mb-3 mx-3"
                   variant="warning"
                   animated
                   now={breakFastPercentStats.protienPercent}
                 />
                 Fat{" "}
                 <ProgressBar
+                  className="mb-3 mx-3"
                   variant="danger"
                   animated
                   now={breakFastPercentStats.fatPercent}
@@ -93,15 +96,21 @@ function Accord(props) {
             <Accordion.Header>Lunch </Accordion.Header>
             <Accordion.Body>
               Carbohydrates{" "}
-              <ProgressBar animated now={lunchPercentStats.carbsPercent} />
+              <ProgressBar
+                className="mb-3 mx-3"
+                animated
+                now={lunchPercentStats.carbsPercent}
+              />
               Protein{" "}
               <ProgressBar
+                className="mb-3 mx-3"
                 variant="warning"
                 animated
                 now={lunchPercentStats.protienPercent}
               />
               Fat{" "}
               <ProgressBar
+                className="mb-3 mx-3"
                 variant="danger"
                 animated
                 now={lunchPercentStats.fatPercent}
@@ -132,12 +141,14 @@ function Accord(props) {
               <ProgressBar animated now={dinnerPercentStats.carbsPercent} />
               Protein{" "}
               <ProgressBar
+                className="mb-3 mx-3"
                 variant="warning"
                 animated
                 now={dinnerPercentStats.protienPercent}
               />
               Fat{" "}
               <ProgressBar
+                className="mb-3 mx-3"
                 variant="danger"
                 animated
                 now={dinnerPercentStats.fatPercent}
