@@ -36,6 +36,8 @@ function DietBox() {
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
+    setShowLogFood(false);
+    setShowRecommend(true);
     const preFetch = async () => {
       try {
         const response = await axios.get(
@@ -276,14 +278,14 @@ function DietBox() {
       <div className="DietBox col-lg-10 col-sm container-fluid">
         <div className="button-container">
           <Button
-            variant="outline-primary"
+            variant={showRecommend ? "primary" : "outline-primary"}
             style={{ marginRight: "10px" }}
             onClick={handleRecommendClick}
           >
             Recommend
           </Button>
           <Button
-            variant="outline-success"
+            variant={showLogFood ? "success" : "outline-success"}
             style={{ marginRight: "10px" }}
             onClick={handleLogFoodClick}
           >
@@ -292,6 +294,7 @@ function DietBox() {
         </div>
         {showRecommend && (
           <Container className="pop-up-container">
+            <h3>Recommend diet plan</h3>
             {!isDietGenerated && (
               <div>
                 <Typeahead
