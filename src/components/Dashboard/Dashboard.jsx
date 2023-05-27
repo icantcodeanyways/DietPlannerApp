@@ -63,9 +63,9 @@ function Dashboard() {
   return (
     <>
       <div className="DashboardContainer">
-        <h1 style={{ color: "white" }}>
+        <h2 className="pb-3 fw-bold" style={{ color: "white" }}>
           Hello {`${userDetails.firstName} ${userDetails.lastName}`}
-        </h1>
+        </h2>
         <CircularBar userDetails={userDetails} />
         <br />
         <Accord userDetails={userDetails} />
