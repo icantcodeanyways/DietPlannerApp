@@ -67,7 +67,7 @@ function ForgotPassword() {
         { email: email, password: password, rest_code: code }
       );
       if (response.status === 200) {
-        toast.success("Password reset successfully.");
+        toast.success("Password reset successfully. Please login ");
         setIsCodeSent(false);
         setIsLoading({ status: false, message: "" });
         setEmail("");

@@ -16,7 +16,7 @@ function NavbarSample() {
     e.preventDefault();
     setIsAuthenticated(false);
     localStorage.removeItem("Token");
-    toast.success("You have been logged out successfully..");
+    toast.success("You have been logged out successfully");
     history.push("/");
   }
 

@@ -127,7 +127,7 @@ function DietBox() {
       setLoading({ status: false, message: "" });
       setFoodItems([{ food: "", quantity: "" }]);
       if (error.response.status === 400) {
-        toast.error("Unable to log diet info due to missing data.");
+        toast.error("Unable to log diet info due to missing data");
       } else if (error.response.status === 409) {
         toast.error(
           "Another diet plan already exist for the selected meal time. Please select a different time and try"
@@ -236,14 +236,14 @@ function DietBox() {
       setGeneratedDiets([]);
       setMeals([]);
       setIsDietGenerated(false);
-      toast.success("Diet plan saved successully.");
+      toast.success("Diet plan saved successully");
     } catch (error) {
       setLoading({ status: false, message: "" });
       setMeals([]);
       setGeneratedDiets([]);
       setIsDietGenerated(false);
       if (error.response.status == 409) {
-        toast.error("Diet plan already exist for the given meal time.");
+        toast.error("Diet plan already exist for the given meal time");
       } else {
         toast.error("An error occured");
       }

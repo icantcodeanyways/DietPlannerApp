@@ -63,7 +63,7 @@ function UserForm() {
       }
     } catch (error) {
       console.log(error);
-      toast.error("An error occured while updating data.");
+      toast.error("An error occured while updating data");
     }
   }
 
