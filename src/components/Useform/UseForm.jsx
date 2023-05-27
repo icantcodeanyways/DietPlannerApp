@@ -71,6 +71,7 @@ function UserForm() {
     <>
       <div className="containerBox">
         <form onSubmit={handleSubmit}>
+          <h3 className="mb-4">Update user details</h3>
           <label>
             Height:
             <input
@@ -109,7 +110,7 @@ function UserForm() {
             <option value="maintain">Maintain weight</option>
             <option value="lose">Lose weight</option>
           </select>
-          <button type="submit">Update profile</button>
+          <button className="mt-4" type="submit">Update profile</button>
         </form>
       </div>
     </>
