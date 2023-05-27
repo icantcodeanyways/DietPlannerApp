@@ -46,7 +46,7 @@ function Accord(props) {
 
   return (
     <>
-      <div className="AccordBox container">
+      <div className="AccordBox">
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Breakfast </Accordion.Header>
