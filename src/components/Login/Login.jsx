@@ -45,7 +45,11 @@ function App() {
       }
       setLoading({ status: false, message: "" });
     } catch (error) {
-      toast.error(error.response.data.message);
+      if (error.response) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("An error occured");
+      }
       setEmail("");
       setPassword("");
       setLoading({ status: false, message: "" });
