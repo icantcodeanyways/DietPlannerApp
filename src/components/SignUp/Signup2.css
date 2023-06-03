@@ -1,0 +1,35 @@
+.Signup1container2{
+    align-items: center;
+    padding:30px
+
+}
+
+  
+  .activityfactor {
+    display: flex ;
+    flex-direction: row;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    margin: 20px;
+  }
+  
+  .weightgoals {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    margin: 20px;
+  }
+  
+  .image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px;
+    border:2px solid black
+  }
+  
+  /* Add additional styles as needed */
+  
