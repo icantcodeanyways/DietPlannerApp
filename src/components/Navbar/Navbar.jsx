@@ -21,11 +21,11 @@ function NavbarSample() {
   }
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="warning" variant="dark">
+    <Navbar collapseOnSelect expand="" bg="warning" variant="dark">
       {isAuthenticated ? (
         <Container>
           <Navbar.Brand>
-            <h3>Diet Planner Application</h3>
+            <h1>Diet Planner Application</h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

@@ -1,9 +1,10 @@
 .AccordBox {
-  width: 60%;
+  width: 70%;
   border: 5px solid orange;
   overflow: hidden;
   border-radius: 20px;
   margin: auto;
+  margin-bottom: 20px;
 }
 
 .BreakDiv {

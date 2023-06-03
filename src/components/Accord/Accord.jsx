@@ -46,7 +46,7 @@ function Accord(props) {
 
   return (
     <>
-      <div className="AccordBox">
+      <div className="AccordBox ">
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Breakfast </Accordion.Header>
@@ -82,14 +82,14 @@ function Accord(props) {
               >
                 Recommend
               </button>
-              <button
+              {/* <button
                 class="button button3 "
                 onClick={() => {
                   history.push("/diet");
                 }}
               >
                 Track
-              </button>
+              </button> */}
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
@@ -124,14 +124,14 @@ function Accord(props) {
               >
                 Recommend
               </button>
-              <button
+              {/* <button
                 class="button button3 "
                 onClick={() => {
                   history.push("/diet");
                 }}
               >
                 Track
-              </button>
+              </button> */}
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2">
@@ -163,14 +163,14 @@ function Accord(props) {
                 >
                   Recommend
                 </button>
-                <button
+                {/* <button
                   class="button button3 "
                   onClick={() => {
                     history.push("/diet");
                   }}
                 >
                   Track
-                </button>
+                </button> */}
               </div>
             </Accordion.Body>
           </Accordion.Item>
