@@ -91,7 +91,7 @@ function DietBox() {
 
   const handleFoodLog = async () => {
     const requestBodyFoodItems = foodItems.map((item) => {
-      if (!item.quantity || item.quantity.toString() == "0") {
+      if (!item.quantity || item.quantity.toString() === "0") {
         toast.error("Please provide a valid quantity");
         return;
       }
@@ -194,7 +194,7 @@ function DietBox() {
       setGeneratedDiets([]);
       setShowRecommend([]);
       setIsDietGenerated(false);
-      if (error.response.status == 400) {
+      if (error.response.status === 400) {
         toast.error(
           "Cannot generate diet plan with the given data. Please choose some other meals"
         );
@@ -242,7 +242,7 @@ function DietBox() {
       setMeals([]);
       setGeneratedDiets([]);
       setIsDietGenerated(false);
-      if (error.response.status == 409) {
+      if (error.response.status === 409) {
         toast.error("Diet plan already exist for the given meal time");
       } else {
         toast.error("An error occured");
