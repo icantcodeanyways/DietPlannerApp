@@ -5,9 +5,10 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import { useHistory } from "react-router-dom";
 
 function Accord(props) {
-  const breakFastStats = props.userDetails.breakFastStats | 0;
-  const dinnerStats = props.userDetails.dinnerStats | 0;
-  const lunchStats = props.userDetails.lunchStats | 0;
+  console.log(props);
+  const breakFastStats = props.userDetails.breakFastStats;
+  const dinnerStats = props.userDetails.dinnerStats;
+  const lunchStats = props.userDetails.lunchStats;
 
   const history = useHistory();
 
