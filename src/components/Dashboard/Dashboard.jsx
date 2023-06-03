@@ -51,7 +51,6 @@ function Dashboard() {
           lunchStats: userData.lunch_stats,
           dinnerStats: userData.dinner_stats,
         });
-        console.log(userDetails.lunchStats);
       } catch (error) {
         console.log(error);
       }
