@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import NavbarSample from './Navbar/Navbar';
 // import ActivityFactorImage from './images/activity_factor.jpg';
 // import WeightGoalsImage from './images/weight_goals.jpg';
-import active from "./images/active.jpg"
-import sedentary from "./images/SEdentary.jpg"
-import moderate from "./images/Moderate.jpg"
-import Sitting from "./images/Sittingcouch.jpg"
-import highlyActive from "./images/highlyactive.jpg"
-import gainw from "./images/Weight Gain.jpg"
-import loosew from "./images/Weight Loss.jpg"
-import maintain from "./images/bg2.jpg"
+import active from "../images/active.jpg"
+import sedentary from "../images/SEdentary.jpg"
+import moderate from "../images/Moderate.jpg"
+import Sitting from "../images/Sittingcouch.jpg"
+import highlyActive from "../images/highlyactive.jpg"
+import gainw from "../images/Weight Gain.jpg"
+import loosew from "../images/Weight Loss.jpg"
+import maintain from "../images/bg2.jpg"
 
 
 
