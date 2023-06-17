@@ -36,10 +36,14 @@ button[type="submit"]:hover {
 }
 
 .containerBox {
+
   display: flex;
   justify-content: center;
   align-items: center;
   height: 500px;
   width: 400px;
+  padding:10px;
   background-color: white;
+  border: 5px solid orange;
+  border-radius: 5px;
 }

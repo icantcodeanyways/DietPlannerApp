@@ -9,17 +9,15 @@ function Accord(props) {
   const breakFastStats = props.userDetails.breakFastStats;
   const dinnerStats = props.userDetails.dinnerStats;
   const lunchStats = props.userDetails.lunchStats;
+  
 
   const history = useHistory();
 
   const breakFastPercentStats = {
     carbsPercent:
-      (breakFastStats.consumed_carbs / (props.userDetails.requiredCarbs / 3)) *
-      100,
+      (breakFastStats.consumed_carbs / (props.userDetails.requiredCarbs / 3)) * 100,
     protienPercent:
-      (breakFastStats.consumed_protien /
-        (props.userDetails.requiredProtien / 3)) *
-      100,
+      (breakFastStats.consumed_protien /(props.userDetails.requiredProtien / 3)) * 100,
     fatPercent:
       (breakFastStats.consumed_fat / (props.userDetails.requiredFat / 3)) * 100,
   };
@@ -28,22 +26,23 @@ function Accord(props) {
     carbsPercent:
       (lunchStats.consumed_carbs / (props.userDetails.requiredCarbs / 3)) * 100,
     protienPercent:
-      (lunchStats.consumed_protien / (props.userDetails.requiredProtien / 3)) *
-      100,
+      (lunchStats.consumed_protien / (props.userDetails.requiredProtien / 3)) * 100,
     fatPercent:
       (lunchStats.consumed_fat / (props.userDetails.requiredFat / 3)) * 100,
   };
 
   const dinnerPercentStats = {
     carbsPercent:
-      (dinnerStats.consumed_carbs / (props.userDetails.requiredCarbs / 3)) *
-      100,
+      (dinnerStats.consumed_carbs / (props.userDetails.requiredCarbs / 3)) * 100,
     protienPercent:
-      (dinnerStats.consumed_protien / (props.userDetails.requiredProtien / 3)) *
-      100,
+      (dinnerStats.consumed_protien / (props.userDetails.requiredProtien / 3)) * 100,
     fatPercent:
       (dinnerStats.consumed_fat / (props.userDetails.requiredFat / 3)) * 100,
   };
+// console.log("breakFastStats:", breakFastStats);
+// console.log("lunchStats:", lunchStats);
+// console.log("dinnerStats:", dinnerStats);
+
 
   return (
     <>
@@ -53,20 +52,22 @@ function Accord(props) {
             <Accordion.Header>Breakfast </Accordion.Header>
             <Accordion.Body>
               <div className="BreakDiv">
-                Carbohydrates{" "}
+                Carbohydrates{" "}{(props.userDetails.breakFastStats.consumed_carbs)}/{(props.userDetails.requiredCarbs / 3).toFixed(2)}
+                {/* {props.userDetails.consumedCalories.toFixed(3) } */}
                 <ProgressBar
                   className="mb-3 mx-3"
                   animated
                   now={breakFastPercentStats.carbsPercent}
                 />
                 Protein{" "}
+                {`${props.userDetails.breakFastStats.consumed_protien}/${(props.userDetails.requiredProtien / 3).toFixed(2)}`}
                 <ProgressBar
                   className="mb-3 mx-3"
                   variant="warning"
                   animated
                   now={breakFastPercentStats.protienPercent}
                 />
-                Fat{" "}
+                Fat{" "}[{(props.userDetails.breakFastStats.consumed_fat)}/{(props.userDetails.requiredFat / 3).toFixed(2)}]
                 <ProgressBar
                   className="mb-3 mx-3"
                   variant="danger"
@@ -96,20 +97,21 @@ function Accord(props) {
           <Accordion.Item eventKey="1">
             <Accordion.Header>Lunch </Accordion.Header>
             <Accordion.Body>
-              Carbohydrates{" "}
+              
+              Carbohydrates{" "}[{(props.userDetails.lunchStats.consumed_carbs)}/{(props.userDetails.requiredCarbs / 3).toFixed(2)}]
               <ProgressBar
                 className="mb-3 mx-3"
                 animated
                 now={lunchPercentStats.carbsPercent}
               />
-              Protein{" "}
+              Protein{" "} [{(props.userDetails.lunchStats.consumed_protien)}/{(props.userDetails.requiredProtien / 3).toFixed(2)}]
               <ProgressBar
                 className="mb-3 mx-3"
                 variant="warning"
                 animated
                 now={lunchPercentStats.protienPercent}
               />
-              Fat{" "}
+              Fat{" "}[{(props.userDetails.lunchStats.consumed_fat)}/{(props.userDetails.requiredFat / 3).toFixed(2)}]
               <ProgressBar
                 className="mb-3 mx-3"
                 variant="danger"
@@ -138,16 +140,19 @@ function Accord(props) {
           <Accordion.Item eventKey="2">
             <Accordion.Header>Dinner </Accordion.Header>
             <Accordion.Body>
-              Carbohydrates{" "}
-              <ProgressBar animated now={dinnerPercentStats.carbsPercent} />
-              Protein{" "}
+              Carbohydrates{" "}[{(props.userDetails.dinnerStats.consumed_carbs)}/{(props.userDetails.requiredCarbs / 3).toFixed(2)}]
+              <ProgressBar 
+              className="mb-3 mx-3"
+              animated now={dinnerPercentStats.carbsPercent} />
+
+              Protein{" "}[{(props.userDetails.dinnerStats.consumed_protien)}/{(props.userDetails.requiredProtien / 3).toFixed(2)}]
               <ProgressBar
                 className="mb-3 mx-3"
                 variant="warning"
-                animated
-                now={dinnerPercentStats.protienPercent}
+                animated now={dinnerPercentStats.protienPercent}
               />
-              Fat{" "}
+
+              Fat{" "}[{(props.userDetails.dinnerStats.consumed_fat)}/{(props.userDetails.requiredFat / 3).toFixed(2)}]
               <ProgressBar
                 className="mb-3 mx-3"
                 variant="danger"

@@ -1,5 +1,9 @@
+
 .p-3{
-    height:500px;
+    height:450px;
+    border: 5px solid orange;
+    border-radius: 20px;
+    margin:2px;
 }
 .card-img{
     height:200px
@@ -8,3 +12,5 @@
 .text{
     margin-bottom: 0;
 }
+
+

@@ -11,6 +11,8 @@
   margin: 0 auto;
   max-width: 900px;
   text-align: center;
+  border: 5px solid orange;
+  border-radius: 20px;
 }
 
 .pop-up-container h3 {

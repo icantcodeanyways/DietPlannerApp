@@ -1,5 +1,5 @@
 import "../Dashboard/Dashboard.css";
-import "./ViewDietPlan.css"
+// import "./ViewDietPlan.css"
 import {
   Container,
   Spinner,
