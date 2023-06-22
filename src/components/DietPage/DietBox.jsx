@@ -370,7 +370,7 @@ function DietBox() {
                       onInputChange={handleSearch}
                       onChange={(value) => handleChangeLog(value, index)}
                       options={suggestions}
-                      placeholder="Search for your favorite meal.."
+                      placeholder="Search for your favorite meal"
                       selected={foodItem.food}
                     />
                   </Col>

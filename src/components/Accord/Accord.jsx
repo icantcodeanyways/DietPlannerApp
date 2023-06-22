@@ -76,14 +76,7 @@ function Accord(props) {
                 />
               </div>
               <br />
-              <button
-                class="button"
-                onClick={() => {
-                  history.push("/diet");
-                }}
-              >
-                Recommend
-              </button>
+              
               {/* <button
                 class="button button3 "
                 onClick={() => {
@@ -119,14 +112,7 @@ function Accord(props) {
                 now={lunchPercentStats.fatPercent}
               />
               <br />
-              <button
-                class="button"
-                onClick={() => {
-                  history.push("/diet");
-                }}
-              >
-                Recommend
-              </button>
+              
               {/* <button
                 class="button button3 "
                 onClick={() => {
@@ -161,14 +147,6 @@ function Accord(props) {
               />
               <br />
               <div class=" buttons">
-                <button
-                  class="button"
-                  onClick={() => {
-                    history.push("/diet");
-                  }}
-                >
-                  Recommend
-                </button>
                 {/* <button
                   class="button button3 "
                   onClick={() => {

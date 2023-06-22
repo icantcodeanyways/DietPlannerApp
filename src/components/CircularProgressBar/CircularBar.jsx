@@ -2,8 +2,13 @@ import React from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { useHistory } from "react-router-dom";
+
 import "./CircularBar.css";
+
 function CircularBar(props) {
+  const history = useHistory();
+
   const caloriePercentage =
     ((props.userDetails.consumedCalories / props.userDetails.requiredCalories) *
       100) |
@@ -51,6 +56,32 @@ function CircularBar(props) {
             animated
             now={fatPercentage}
           />
+        </div>
+        <div>
+        <button
+                class="button btn1"
+                onClick={() => {
+                  history.push("/diet");
+                }}
+              >
+                Recommend
+              </button>
+              <button
+                class="button btn2"
+                onClick={() => {
+                  history.push("/diet");
+                }}
+              >
+                Custom Meal
+              </button>
+              <button
+                class="button btn3"
+                onClick={() => {
+                  history.push("/diet");
+                }}
+              >
+                Log Food
+              </button>
         </div>
       </div>
     </>
