@@ -14,6 +14,7 @@ import { ToastContainer } from "react-toastify";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ViewDietPlan from "./components/ViewDietPlan/ViewDietPlan";
 import "react-toastify/dist/ReactToastify.css";
+import CustomMealPage from "./components/CustomMealPage/CustomMealPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Signup} />
             <Route exact path="/forgot_password" component={ForgotPassword} />
+            <PrivateRoute exact path="/custom_meal" component={CustomMealPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute
               exact

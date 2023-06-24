@@ -42,6 +42,10 @@ function NavbarSample() {
               <LinkContainer exact to="/view_diet_plan">
                 <Nav.Link>View generated diet plans</Nav.Link>
               </LinkContainer>
+              <LinkContainer exact to="/custom_meal">
+                <Nav.Link>Custom meal calculation</Nav.Link>
+              </LinkContainer>
+
               <Nav.Link onClick={handleLogOut} style={{ color: "white" }}>
                 Logout
               </Nav.Link>
