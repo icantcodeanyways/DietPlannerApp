@@ -52,7 +52,7 @@ function Accord(props) {
             <Accordion.Header>Breakfast </Accordion.Header>
             <Accordion.Body>
               <div className="BreakDiv">
-                Carbohydrates{" "}{(props.userDetails.breakFastStats.consumed_carbs)}/{(props.userDetails.requiredCarbs / 3).toFixed(2)}
+                Carbohydrates{" "} [{(props.userDetails.breakFastStats.consumed_carbs)}/{(props.userDetails.requiredCarbs / 3).toFixed(2)}]
                 {/* {props.userDetails.consumedCalories.toFixed(3) } */}
                 <ProgressBar
                   className="mb-3 mx-3"
@@ -60,7 +60,7 @@ function Accord(props) {
                   now={breakFastPercentStats.carbsPercent}
                 />
                 Protein{" "}
-                {`${props.userDetails.breakFastStats.consumed_protien}/${(props.userDetails.requiredProtien / 3).toFixed(2)}`}
+                [{`${props.userDetails.breakFastStats.consumed_protien}/${(props.userDetails.requiredProtien / 3).toFixed(2)}`}]
                 <ProgressBar
                   className="mb-3 mx-3"
                   variant="warning"
