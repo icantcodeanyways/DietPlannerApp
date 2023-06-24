@@ -57,31 +57,31 @@ function CircularBar(props) {
             now={fatPercentage}
           />
         </div>
-        <div>
-        <button
-                class="button btn1"
-                onClick={() => {
-                  history.push("/diet");
-                }}
-              >
-                Recommend
-              </button>
-              <button
-                class="button btn2"
-                onClick={() => {
-                  history.push("/diet");
-                }}
-              >
-                Custom Meal
-              </button>
-              <button
-                class="button btn3"
-                onClick={() => {
-                  history.push("/diet");
-                }}
-              >
-                Log Food
-              </button>
+        <div className="py-3">
+          <button
+            class="button btn1 mx-2"
+            onClick={() => {
+              history.push("/diet");
+            }}
+          >
+            Recommend
+          </button>
+          <button
+            class="button btn2 mx-2"
+            onClick={() => {
+              history.push("/custom_meal");
+            }}
+          >
+            Custom Meal
+          </button>
+          <button
+            class="button btn3 mx-2"
+            onClick={() => {
+              history.push("/diet");
+            }}
+          >
+            Log Food
+          </button>
         </div>
       </div>
     </>
