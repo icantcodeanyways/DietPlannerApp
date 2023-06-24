@@ -101,8 +101,11 @@ function ViewDietPlan() {
               })}`}
             </h3>
             {dietPlans.map((dietplan, index) => (
-              <Row key={index} className="justify-content-center">
-                <h2>{dietplan.meal_timing}</h2>
+              <Row key={index} className="justify-content-center m-4">
+                <h2>
+                  {dietplan.meal_timing.charAt(0).toUpperCase() +
+                    dietplan.meal_timing.slice(1)}
+                </h2>
                 <CardGroup className="justify-content-center">
                   {dietplan.diet_plan.map((diet, foodIndex) => (
                     <div key={foodIndex}>
