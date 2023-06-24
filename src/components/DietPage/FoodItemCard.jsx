@@ -3,7 +3,7 @@ import "./FoodItemCard.css"
 function FoodItemCard({ diet }) {
   console.log(diet);
   return (
-    <div className="p-3">
+    <div className="p-3 m-3">
       <Card >
         <Card.Img className="card-img" variant="top" src={diet.image} />
         <Card.Body className="card-body">
