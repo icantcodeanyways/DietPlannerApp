@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./Signup.css";
-// import { Link } from "react-router-dom";
-// import { Dropdown, DropdownButton } from "react-bootstrap";
 import { toast } from "react-toastify";
 import samplePhoto from "../images/bg4.jpg";
 import axios from "axios";
@@ -243,14 +241,15 @@ function Register() {
                               className="form-check-input"
                               type="radio"
                               onChange={handleFormChange}
-                              value="male"
+                              value="female"
                               name="gender"
+                              checked={formData.gender === "female"}
                               required
                               id="femaleGender"
                             />
                             <label
                               className="form-check-label"
-                              for="femaleGender"
+                              htmlFor="femaleGender"
                             >
                               Female
                             </label>
@@ -263,12 +262,13 @@ function Register() {
                               name="gender"
                               id="maleGender"
                               required
+                              checked={formData.gender === "male"}
                               onChange={handleFormChange}
-                              value="female"
+                              value="male"
                             />
                             <label
                               className="form-check-label"
-                              for="maleGender"
+                              htmlFor="maleGender"
                             >
                               Male
                             </label>
@@ -280,16 +280,34 @@ function Register() {
                             <select
                               name="activityFactor"
                               value={formData.activityFactor}
+                              style={{
+                                maxWidth: "400px",
+                                overflow: "auto",
+                              }}
                               className="select"
                               required
                               onChange={handleFormChange}
                             >
                               <option value="1">Activity Factor</option>
-                              <option value="1">1</option>
-                              <option value="1.2">1.2</option>
-                              <option value="1.4">1.4</option>
-                              <option value="1.6">1.6</option>
-                              <option value="1.8">1.8</option>
+                              <option value="1">
+                                Sedentary (Little or no exercise)
+                              </option>
+                              <option value="1.2">
+                                Mild activity (Intensive exercise for at least
+                                20 mins per week)
+                              </option>
+                              <option value="1.4">
+                                Moderate activity (Intensive exercise for at
+                                least 30 to 60 mins 3 times per week)
+                              </option>
+                              <option value="1.6">
+                                Heavy activity (Intensive exercise for 60 mins
+                                for at least 5 times per week)
+                              </option>
+                              <option value="1.8">
+                                Extreme activity (Daily intense exercise for at
+                                least 3 hours)
+                              </option>{" "}
                             </select>
                           </div>
                         </div>
@@ -303,7 +321,7 @@ function Register() {
                               required
                               onChange={handleFormChange}
                             >
-                              <option value="maintain">Diet Goal</option>
+                              <option>Diet Goal</option>
                               <option value="gain">Gain weight</option>
                               <option value="maintain">Maintain weight</option>
                               <option value="lose">Lose weight</option>
