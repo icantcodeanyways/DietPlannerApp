@@ -288,7 +288,7 @@ function Register() {
                               required
                               onChange={handleFormChange}
                             >
-                              <option value="1">Activity Factor</option>
+                              <option>Activity Factor</option>
                               <option value="1">
                                 Sedentary (Little or no exercise)
                               </option>
